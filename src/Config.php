@@ -73,6 +73,7 @@ class Config extends BaseConfig
                 'ternary_to_null_coalescing' => true,
                 'void_return' => true,
                 'no_short_echo_tag' => false,
+                'no_alternative_syntax' => false,
             ])
         ;
     }
