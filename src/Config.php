@@ -74,6 +74,7 @@ class Config extends BaseConfig
                 'void_return' => true,
                 'no_short_echo_tag' => false,
                 'no_alternative_syntax' => false,
+                'class_attributes_separation' => true,
             ])
         ;
     }
