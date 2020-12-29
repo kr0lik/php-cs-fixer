@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace kr0lik\CodeStyleFixer;
 
+use kr0lik\CodeStyleFixer\Rules\PhpdocThrowsSortFixer;
 use PhpCsFixer\Config as BaseConfig;
 
 class Config extends BaseConfig
@@ -17,8 +18,12 @@ class Config extends BaseConfig
     {
         parent::__construct($name);
 
-        $this->setRiskyAllowed(true)
+        $this
+            ->setRiskyAllowed(true)
             ->setUsingCache(false)
+            ->registerCustomFixers([
+                new PhpdocThrowsSortFixer(),
+            ])
             ->setRules([
                 '@PhpCsFixer' => true,
                 'align_multiline_comment' => true,
@@ -75,6 +80,7 @@ class Config extends BaseConfig
                 'no_short_echo_tag' => false,
                 'no_alternative_syntax' => false,
                 'class_attributes_separation' => true,
+                'Kr0lik/phpdoc_throws_sort' => true,
             ])
         ;
     }
