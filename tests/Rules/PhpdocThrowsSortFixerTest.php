@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Rules;
+namespace kr0lik\CodeStyleFixer\Tests\Rules;
 
 use kr0lik\CodeStyleFixer\Rules\PhpdocThrowsSortFixer;
 use PhpCsFixer\Tokenizer\Tokens;
@@ -11,7 +11,6 @@ use SplFileInfo;
 
 /**
  * @internal
- * @coversNothing
  */
 class PhpdocThrowsSortFixerTest extends TestCase
 {
