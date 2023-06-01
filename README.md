@@ -23,7 +23,7 @@ to the require section of your `composer.json` file.
 
 Copy rules:
 
-    cp ./vendor/kr0lik/php-cs-fixer/.php_cs.dist ./
+    cp ./vendor/kr0lik/php-cs-fixer/.php-cs-fixer.dist.php ./
 
 
 
