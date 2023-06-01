@@ -9,11 +9,6 @@ use PhpCsFixer\Config as BaseConfig;
 
 class Config extends BaseConfig
 {
-    /**
-     * @var string
-     */
-    protected $header;
-
     public function __construct($name = 'kr0lik CodeStyleFixer')
     {
         parent::__construct($name);
@@ -25,10 +20,14 @@ class Config extends BaseConfig
                 new PhpdocThrowsSortFixer(),
             ])
             ->setRules([
+                '@Symfony' => true,
                 '@PhpCsFixer' => true,
                 'align_multiline_comment' => true,
                 'array_indentation' => true,
                 'array_syntax' => ['syntax' => 'short'],
+                'blank_line_before_statement' => [
+                    'statements' => ['break', 'continue', 'declare', 'return', 'throw', 'try', 'do', 'exit', 'for', 'foreach', 'if', 'switch', 'while'],
+                ],
                 'comment_to_phpdoc' => true,
                 'compact_nullable_typehint' => true,
                 'date_time_immutable' => true,
@@ -62,6 +61,24 @@ class Config extends BaseConfig
                 'phpdoc_annotation_without_dot' => true,
                 'phpdoc_no_useless_inheritdoc' => true,
                 'phpdoc_order' => true,
+                'phpdoc_separation' => [
+                    'groups' => [
+                        ['deprecated', 'link', 'see', 'since'],
+                        ['category', 'package', 'subpackage'],
+                        ['property', 'property-read', 'property-write'],
+                        ['var'],
+                        ['param'],
+                        ['throws'],
+                        ['return'],
+                        ['ParamConverter'],
+                        ['IsGranted'],
+                        ['Route'],
+                        ['AO'],
+                        ['ORM'],
+                        ['Assert'],
+                    ],
+                    'skip_unlisted_annotations' => true,
+                ],
                 'phpdoc_summary' => false,
                 'phpdoc_to_comment' => false,
                 'phpdoc_trim_consecutive_blank_line_separation' => true,
@@ -70,6 +87,7 @@ class Config extends BaseConfig
                     'sort_algorithm' => 'none',
                 ],
                 'phpdoc_var_without_name' => false,
+                'php_unit_test_class_requires_covers' => false,
                 'return_assignment' => false,
                 'simple_to_complex_string_variable' => true,
                 'static_lambda' => true,
@@ -77,9 +95,6 @@ class Config extends BaseConfig
                 'strict_param' => true,
                 'ternary_to_null_coalescing' => true,
                 'void_return' => true,
-                'no_short_echo_tag' => false,
-                'no_alternative_syntax' => false,
-                'class_attributes_separation' => true,
                 'Kr0lik/phpdoc_throws_sort' => true,
             ])
         ;

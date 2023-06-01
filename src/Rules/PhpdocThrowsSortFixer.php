@@ -7,6 +7,9 @@ namespace kr0lik\CodeStyleFixer\Rules;
 use PhpCsFixer\DocBlock\Annotation;
 use PhpCsFixer\DocBlock\DocBlock;
 use PhpCsFixer\Fixer\FixerInterface;
+use PhpCsFixer\FixerDefinition\CodeSample;
+use PhpCsFixer\FixerDefinition\FixerDefinition;
+use PhpCsFixer\FixerDefinition\FixerDefinitionInterface;
 use PhpCsFixer\Tokenizer\Token;
 use PhpCsFixer\Tokenizer\Tokens;
 use SplFileInfo;
@@ -58,6 +61,22 @@ final class PhpdocThrowsSortFixer implements FixerInterface
     public function supports(SplFileInfo $file): bool
     {
         return true;
+    }
+
+    public function getDefinition(): FixerDefinitionInterface
+    {
+        return new FixerDefinition(
+            'Sorting phpdoc throws',
+            [new CodeSample('<?php 
+    /** 
+     * @throws JsonException
+     * @throws PublishMQPublisherException
+     * @throws UnexpectedOldCancelReasonException
+     */
+    public function test(): void
+    {
+    }')],
+        );
     }
 
     private function sortThrowsAnnotations(string $content): string
