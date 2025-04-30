@@ -28,3 +28,13 @@ Copy rules:
 
 
 More info: https://github.com/FriendsOfPHP/PHP-CS-Fixer
+
+## Develop:
+
+docker pull composer:2.2.20
+
+docker run -v .:/app --rm composer:2.2.20 composer install
+
+docker run -v .:/app --rm composer:2.2.20 vendor/bin/php-cs-fixer fix
+
+docker run -v .:/app --rm composer:2.2.20 vendor/bin/phpunit tests

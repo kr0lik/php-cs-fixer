@@ -81,6 +81,7 @@ class Config extends BaseConfig
                 ],
                 'phpdoc_summary' => false,
                 'phpdoc_to_comment' => false,
+                'no_empty_phpdoc' => true,
                 'phpdoc_trim_consecutive_blank_line_separation' => true,
                 'phpdoc_types_order' => [
                     'null_adjustment' => 'always_last',
@@ -95,6 +96,11 @@ class Config extends BaseConfig
                 'strict_param' => true,
                 'ternary_to_null_coalescing' => true,
                 'void_return' => true,
+                'no_unset_cast' => true,
+                'class_definition' => ['multi_line_extends_each_single_line' => true],
+                'modernize_types_casting' => true,
+                'modernize_strpos' => true,
+                'multiline_comment_opening_closing' => true,
                 'Kr0lik/phpdoc_throws_sort' => true,
             ])
         ;
